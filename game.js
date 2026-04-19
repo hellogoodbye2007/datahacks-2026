@@ -323,10 +323,15 @@ function renderDecisions(pz) {
 
       <!-- D1: QUOTA -->
       <div class="card">
-        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.6rem;">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.4rem;">
           <span class="section-label" style="margin:0;">🎣 Decision 1 — Fishing Quota</span>
           <span id="quotaVal" style="font-family:var(--mono);font-size:20px;font-weight:700;color:var(--accent);">50%</span>
         </div>
+        <p style="font-size:11px;color:var(--text3);line-height:1.6;margin-bottom:.6rem;">
+          Set how much of the maximum annual catch quota fishing vessels may harvest this quarter.
+          High quotas generate revenue but increase pressure on the anchovy population.
+          During stressed conditions (high El Niño, low oxygen), even moderate quotas can trigger collapse.
+        </p>
         <input type="range" id="quotaSlider" min="0" max="100" value="50" step="5"
           style="width:100%;accent-color:#00b4d8;cursor:pointer;margin-bottom:.4rem;">
         <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--accent3);margin-bottom:.6rem;">
@@ -335,14 +340,14 @@ function renderDecisions(pz) {
         <div style="padding:.5rem .75rem;background:rgba(0,0,0,0.2);border-radius:6px;font-size:11px;color:var(--text3);margin-bottom:.75rem;">
           Est. revenue: ~$<span id="quotaRevenue">${(pz.econ_baseline_M * 0.5).toFixed(1)}</span>M this quarter
         </div>
-        <div style="font-size:10px;color:var(--accent3);margin-bottom:4px;text-transform:uppercase;letter-spacing:.08em;">Population health curve</div>
+        <div style="font-size:10px;color:var(--accent3);margin-bottom:4px;text-transform:uppercase;letter-spacing:.08em;">Population health vs quota level</div>
         <div style="height:90px;"><canvas id="quotaImpactChart"></canvas></div>
       </div>
 
       <!-- D2: ZONES -->
       <div class="card">
         <span class="section-label">🗺️ Decision 2 — Spawning Zone Closures</span>
-        <p style="font-size:11px;color:var(--text3);margin-bottom:.75rem;">Click to close zones. Closing costs fishing revenue but protects larvae.</p>
+        <p style="font-size:11px;color:var(--text3);line-height:1.6;margin-bottom:.75rem;">The Southern California Bight is divided into 4 fishing zones. Each zone has its own stress level based on local oxygen and temperature. Closing a zone eliminates fishing revenue from that area but gives larvae a protected refuge. Red zones are critical — fishing there during stressed quarters almost guarantees collapse.</p>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:.75rem;">
           ${pz.zones.map((z, i) => `
             <button class="zone-btn" data-zone="${i}" style="
@@ -361,6 +366,9 @@ function renderDecisions(pz) {
       <!-- D5: COMMS -->
       <div class="card">
         <span class="section-label">📢 Decision 5 — Public Communication</span>
+        <p style="font-size:11px;color:var(--text3);line-height:1.6;margin-bottom:.6rem;">
+          Choose how to communicate with the public and fishing industry. Saying nothing maintains normal operations but can cause panic if a collapse happens without warning. An advisory warns fishers to be cautious. Declaring an emergency halts recreational fishing but destroys public trust if conditions don't warrant it — people stop listening when you cry wolf too often.
+        </p>
         <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:.75rem;">
           ${[
             ['nothing', '🤫', 'Say nothing', 'Normal ops. No public impact.', 'rgba(0,180,216,.14)', 'rgba(0,180,216,.4)', 'var(--accent)'],
@@ -384,10 +392,13 @@ function renderDecisions(pz) {
 
       <!-- D3: RECALL -->
       <div class="card">
-        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.6rem;">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.4rem;">
           <span class="section-label" style="margin:0;">⚓ Decision 3 — Fleet Recall</span>
           <span id="recallVal" style="font-family:var(--mono);font-size:20px;font-weight:700;color:var(--accent);">0%</span>
         </div>
+        <p style="font-size:11px;color:var(--text3);line-height:1.6;margin-bottom:.6rem;">
+          Order fishing vessels back to port before the quarter ends. Recalling vessels immediately reduces fishing pressure and can prevent collapse during high-risk periods. Each vessel costs ~$12K in compensation. Recalling more than 60% of the fleet when conditions are mild is considered an overreaction and hurts your economic score.
+        </p>
         <input type="range" id="recallSlider" min="0" max="100" value="0" step="5"
           style="width:100%;accent-color:#00b4d8;cursor:pointer;margin-bottom:.4rem;">
         <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--accent3);margin-bottom:.6rem;">
@@ -396,16 +407,19 @@ function renderDecisions(pz) {
         <div style="padding:.5rem .75rem;background:rgba(0,0,0,0.2);border-radius:6px;font-size:11px;color:var(--text3);margin-bottom:.75rem;">
           Recalled: <span id="recallVessels">0</span> of ${pz.fleet_size} vessels · Cost: ~$<span id="recallCost">0</span>K
         </div>
-        <div style="font-size:10px;color:var(--accent3);margin-bottom:4px;text-transform:uppercase;letter-spacing:.08em;">Economic impact curve</div>
+        <div style="font-size:10px;color:var(--accent3);margin-bottom:4px;text-transform:uppercase;letter-spacing:.08em;">Economic impact vs recall level</div>
         <div style="height:90px;"><canvas id="recallImpactChart"></canvas></div>
       </div>
 
       <!-- D4: MONITORING -->
       <div class="card">
-        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.6rem;">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.4rem;">
           <span class="section-label" style="margin:0;">📡 Decision 4 — Monitoring Intensity</span>
           <span id="monitorVal" style="font-family:var(--mono);font-size:20px;font-weight:700;color:var(--accent);">50%</span>
         </div>
+        <p style="font-size:11px;color:var(--text3);line-height:1.6;margin-bottom:.6rem;">
+          Deploy research vessels and buoys to track ocean conditions in real time. Higher monitoring improves your ability to detect early warning signals and boosts your overall manager score. It costs budget but is essential during ambiguous quarters where the El Niño signal is mixed and conditions could tip either way.
+        </p>
         <input type="range" id="monitorSlider" min="0" max="100" value="50" step="5"
           style="width:100%;accent-color:#00b4d8;cursor:pointer;margin-bottom:.4rem;">
         <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--accent3);margin-bottom:.75rem;">
