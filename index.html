@@ -82,7 +82,6 @@
       <span class="section-label">Food Web Layers</span>
       <div class="layer-row"><span class="layer-icon">🌊</span><div><div class="layer-title">Ocean Chemistry</div><div class="layer-desc">Temperature · Oxygen · Nutrients · El Niño</div></div></div>
       <div class="layer-row"><span class="layer-icon">🐟</span><div><div class="layer-title">Fish Larvae</div><div class="layer-desc">Anchovy · Sardine · Rockfish · Lampfish</div></div></div>
-      <div class="layer-row"><span class="layer-icon">🐦</span><div><div class="layer-title">Seabirds</div><div class="layer-desc">Sooty Shearwater · Cassin's Auklet · Storm Petrel</div></div></div>
       <div class="layer-row"><span class="layer-icon">🌿</span><div><div class="layer-title">Biodiversity Index</div><div class="layer-desc">Shannon Index · Species Richness · Dominance</div></div></div>
     </div>
   </div>
@@ -113,7 +112,6 @@
   <div class="tab-bar">
     <button class="tab-btn active" data-tab="chemistry">🧪 Chemistry</button>
     <button class="tab-btn" data-tab="larvae">🐟 Fish Larvae</button>
-    <button class="tab-btn" data-tab="seabirds">🐦 Seabirds</button>
     <button class="tab-btn" data-tab="forecast">📈 2075 Forecast</button>
     <button class="tab-btn" data-tab="habitat">🗺️ Habitat Shift</button>
   </div>
@@ -142,12 +140,7 @@
     <div class="callout-warn" style="margin-top:1rem;"><strong>2020 anchovy catastrophic collapse.</strong><br>Dropped to 21.8 larvae/10m² — 95% below 2019. ML model did not predict this event.</div>
     <div class="callout-warn"><strong>Sardine trajectory: local collapse ~2039.</strong><br>Under linear extrapolation, sardine effectively disappear from the Southern California Bight by ~2039.</div>
   </div>
-  <div class="tab-panel" id="tab-seabirds">
-    <div class="callout"><strong>66,814 sightings across 170 species, 1987–2006.</strong> Collected from the same CalCOFI vessels — perfect spatial overlap with chemistry stations.</div>
-    <div class="grid-2" style="margin-top:1rem;">
-      <div class="chart-wrap"><span class="chart-title">Seabird Species Richness 1987–2006</span><canvas id="chartSeabirdRich"></canvas></div>
-      <div class="chart-wrap"><span class="chart-title">Total Seabird Individuals 1987–2006</span><canvas id="chartSeabirdInd"></canvas></div>
-    </div>
+  
   </div>
   <div class="tab-panel" id="tab-forecast">
     <div class="callout"><strong>Linear trend projections — "if nothing changes" forecasts.</strong></div>
