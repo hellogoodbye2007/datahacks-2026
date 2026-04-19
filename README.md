@@ -1,3 +1,5 @@
+Website Link: https://mpkcb21.github.io/datahacks-2026/
+
 As the California Current warms, we wanted to understand which biological communities will collapse first. Using 72 years of Scripps/CalCOFI ocean data, our inspiration for Pacific Pulse was to move beyond simply charting temperatures to actually tracking ecosystem stress across multiple chemical variables, and forecasting what the ocean will look like in 2075.
 
 Pacific Pulse is a 70-year ecosystem early warning system that tracks historical ocean chemistry against fish larvae survivability.
