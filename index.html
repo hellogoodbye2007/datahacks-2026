@@ -271,6 +271,7 @@ function navigate(pageId){
   const pg=document.getElementById('page-'+pageId);if(pg)pg.classList.add('active');
   const lk=document.querySelector(`nav a[data-page="${pageId}"]`);if(lk)lk.classList.add('active');
   window.scrollTo(0,0);
+  if(pageId==='game'&&typeof renderGame==='function')renderGame();
 }
 document.querySelectorAll('[data-page]').forEach(el=>{
   el.addEventListener('click',e=>{e.preventDefault();navigate(el.dataset.page);});
