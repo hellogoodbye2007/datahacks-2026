@@ -82,7 +82,6 @@
       <span class="section-label">Food Web Layers</span>
       <div class="layer-row"><span class="layer-icon">🌊</span><div><div class="layer-title">Ocean Chemistry</div><div class="layer-desc">Temperature · Oxygen · Nutrients · El Niño</div></div></div>
       <div class="layer-row"><span class="layer-icon">🐟</span><div><div class="layer-title">Fish Larvae</div><div class="layer-desc">Anchovy · Sardine · Rockfish · Lampfish</div></div></div>
-      <div class="layer-row"><span class="layer-icon">🐦</span><div><div class="layer-title">Seabirds</div><div class="layer-desc">Sooty Shearwater · Cassin's Auklet · Storm Petrel</div></div></div>
       <div class="layer-row"><span class="layer-icon">🌿</span><div><div class="layer-title">Biodiversity Index</div><div class="layer-desc">Shannon Index · Species Richness · Dominance</div></div></div>
     </div>
   </div>
@@ -91,10 +90,9 @@
   <div class="phase-grid">
     <div class="phase-card"><div class="phase-num">PHASE 01</div><div class="phase-title">Chemistry Anomaly Detection</div><div class="phase-desc">Establish how ocean chemistry has shifted since 1949 using 72 years of CalCOFI bottle data.</div></div>
     <div class="phase-card"><div class="phase-num">PHASE 02</div><div class="phase-title">Biological Response — Larvae</div><div class="phase-desc">Identify which fish species collapse first when chemistry crosses stress thresholds.</div></div>
-    <div class="phase-card"><div class="phase-num">PHASE 03</div><div class="phase-title">Biological Response — Seabirds</div><div class="phase-desc">Test whether seabird community composition serves as a leading indicator of ecosystem stress.</div></div>
-    <div class="phase-card"><div class="phase-num">PHASE 04</div><div class="phase-title">Biodiversity Analysis</div><div class="phase-desc">Track Shannon diversity, species richness, and dominance as ecosystem health metrics.</div></div>
-    <div class="phase-card"><div class="phase-num">PHASE 05</div><div class="phase-title">2075 Ecosystem Forecast</div><div class="phase-desc">Project current trends forward under linear trajectory to model the 2075 ecosystem state.</div></div>
-    <div class="phase-card"><div class="phase-num">PHASE 06</div><div class="phase-title">ML Collapse Classifier</div><div class="phase-desc">Gradient boosting model predicting quarterly collapse events from chemistry + El Niño signals.</div></div>
+    <div class="phase-card"><div class="phase-num">PHASE 03</div><div class="phase-title">Biodiversity Analysis</div><div class="phase-desc">Track Shannon diversity, species richness, and dominance as ecosystem health metrics.</div></div>
+    <div class="phase-card"><div class="phase-num">PHASE 04</div><div class="phase-title">2075 Ecosystem Forecast</div><div class="phase-desc">Project current trends forward under linear trajectory to model the 2075 ecosystem state.</div></div>
+    <div class="phase-card"><div class="phase-num">PHASE 05</div><div class="phase-title">ML Collapse Classifier</div><div class="phase-desc">Gradient boosting model predicting quarterly collapse events from chemistry + El Niño signals.</div></div>
   </div>
   <div class="cta-box">
     <div class="cta-emoji">🐟</div>
@@ -113,7 +111,6 @@
   <div class="tab-bar">
     <button class="tab-btn active" data-tab="chemistry">🧪 Chemistry</button>
     <button class="tab-btn" data-tab="larvae">🐟 Fish Larvae</button>
-    <button class="tab-btn" data-tab="seabirds">🐦 Seabirds</button>
     <button class="tab-btn" data-tab="forecast">📈 2075 Forecast</button>
     <button class="tab-btn" data-tab="habitat">🗺️ Habitat Shift</button>
   </div>
@@ -141,13 +138,6 @@
     </div>
     <div class="callout-warn" style="margin-top:1rem;"><strong>2020 anchovy catastrophic collapse.</strong><br>Dropped to 21.8 larvae/10m² — the ML model assigned only 0.8% collapse probability, suggesting a non-chemistry driver.</div>
     <div class="callout-warn"><strong>Sardine trajectory: effectively zero by 2050.</strong><br>Under linear trend extrapolation, sardine larvae drop to effectively zero in the Southern California Bight by 2050 — a local reproductive collapse under current conditions.</div>
-  </div>
-  <div class="tab-panel" id="tab-seabirds">
-    <div class="callout"><strong>66,814 sightings across 170 species, 1987–2006.</strong> Collected from the same CalCOFI vessels — perfect spatial overlap with chemistry stations.</div>
-    <div class="grid-2" style="margin-top:1rem;">
-      <div class="chart-wrap"><span class="chart-title">Seabird Species Richness 1987–2006</span><canvas id="chartSeabirdRich"></canvas></div>
-      <div class="chart-wrap"><span class="chart-title">Total Seabird Individuals 1987–2006</span><canvas id="chartSeabirdInd"></canvas></div>
-    </div>
   </div>
   <div class="tab-panel" id="tab-forecast">
     <div class="callout"><strong>Linear trend projections — "if nothing changes" forecasts.</strong></div>
